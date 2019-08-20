@@ -13,4 +13,4 @@ module.exports = function(app) {
 	});
 };
 
-module.exports = htmlRoutes;
+//module.exports = htmlRoutes;
