@@ -1,0 +1,58 @@
+var friends = require('../data/friends.js');
+
+
+// Export API routes
+module.exports = function(app) {
+	 console.log('___ENTER apiRoutes.js___');
+// Total list of friend entries
+app.get('/api/friends', function(req, res) {
+  console.log(friends);
+  //res.json(friends);
+});
+
+app.post('/api/friends', function(req, res) {
+  
+  var newFriend = {
+    name: req.body.name,
+    photo: req.body.photo,
+    scores: []
+  };
+
+  var scoresArray = [];
+  for(var i = 0; i < req.body.scores.length; i++) {
+    scoresArray.push(parseInt(req.body.scores[i]))
+  }
+  newFriend.scores = scoresArray;
+
+  //Cross check our new friend entry with existing ones
+  var scoreCompareArray = [];
+  for(var i=0; i < friends.length; i++) {
+
+    var totalDifference = 0;
+    for(var j=0; j < newFriend.scores.length; j++) {
+      totalDifference += Math.abs(newFriend.scores[j] - friends[i].scores[j]);
+    }
+
+    scoreCompareArray.push(totalDifference);
+  }
+
+  var bestMatchPosition = 0;
+  for(var i = 1; i < scoreCompareArray.length; i++) {
+
+    if(scoreCompareArray[i] <= scoreCompareArray[bestMatchPosition]) {
+      bestMatchPosition = i;
+    }
+  }
+
+  var bestFriendMatch = friends[bestMatchPosition];
+
+  res.json(bestFriendMatch);
+
+  friends.push(newFriend);
+});
+
+//A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
+//A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic
+}
+
+module.exports = apiRoutes;
