@@ -16,8 +16,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 
 // Link in html and api routes (*cannot find these modules*)
-require('./app/routing/api-routes.js');
-require('./app/routing/html-routes.js');
+require('./app/routing/apiRoutes.js');
+require('./app/routing/htmlRoutes.js');
 
 
 // Listener - Start the server

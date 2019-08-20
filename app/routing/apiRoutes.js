@@ -1,12 +1,12 @@
-var friends = require('../data/friends.js');
+var friendsArray = require('../data/friends.js');
 
 
 // Export API routes
 module.exports = function(app) {
 // Total list of friend entries
 app.get('/api/friends', function(req, res) {
-  console.log(friends);
-  res.json(friends);
+  console.log(friendsArray);
+  res.json(friendsArray);
 });
 
 app.post('/api/friends', function(req, res) {
@@ -17,6 +17,7 @@ app.post('/api/friends', function(req, res) {
     scores: []
   };
 
+  //pushing new scores into an array
   var scoresArray = [];
   for(var i = 0; i < req.body.scores.length; i++) {
     scoresArray.push(parseInt(req.body.scores[i]))
@@ -27,12 +28,12 @@ app.post('/api/friends', function(req, res) {
   var scoreCompareArray = [];
   for(var i=0; i < friends.length; i++) {
 
-    var totalDifference = 0;
+    var scoreDiffer = 0;
     for(var j=0; j < newFriend.scores.length; j++) {
-      totalDifference += Math.abs(newFriend.scores[j] - friends[i].scores[j]);
+      scoreDiffer += Math.abs(newFriend.scores[j] - friends[i].scores[j]);
     }
 
-    scoreCompareArray.push(totalDifference);
+    scoreCompareArray.push(scoreDiffer);
   }
 
   var bestMatchPosition = 0;
@@ -47,7 +48,7 @@ app.post('/api/friends', function(req, res) {
 
   res.json(bestFriendMatch);
 
-  friends.push(newFriend);
+  friendsArray.push(newFriend);
 });
 
 //A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
