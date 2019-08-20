@@ -69,8 +69,16 @@ var friendsArray = [
             name: 'Emilia Clarke',
             photo: '',
             scores: [
-                    '',
-                    ''
+                    '4',
+                    '3',
+                    '4',
+                    '3',
+                    '5',
+                    '2',
+                    '2',
+                    '3',
+                    '4',
+                    '4'
             ]
     }
 ]
