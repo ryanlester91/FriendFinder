@@ -64,6 +64,14 @@ var friendsArray = [
                 '3'
         ]
 
+    },
+    {
+            name: 'Emilia Clarke',
+            photo: '',
+            scores: [
+                    '',
+                    ''
+            ]
     }
 ]
 

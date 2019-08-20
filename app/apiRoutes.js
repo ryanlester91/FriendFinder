@@ -1,3 +1,6 @@
+var express = require("express");
+var path = require("path");
+
 var friends = require('../data/friends.js');
 
 // Export API routes
@@ -10,6 +13,6 @@ app.get('/api/friends', function(req, res) {
 });
 
 app.post('/api/', function(req, res) {
-  console.log();
-  //res.json();
+  console.log(scores);
+  //res.json(scores);
 })
