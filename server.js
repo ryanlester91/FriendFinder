@@ -10,3 +10,13 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+//Server routing map
+apiRoutes(app);
+htmlRoutes(app);
+
+
+// Listener - Start the server
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+  });
