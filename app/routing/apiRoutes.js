@@ -56,4 +56,5 @@ app.post('/api/friends', function(req, res) {
 //A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic
 }
 
+//Doing the module.exports in a function is apparently enough to do this exporting task
 //module.exports = apiRoutes;
