@@ -48,6 +48,7 @@ app.post('/api/friends', function(req, res) {
   var bestFriendMatch = friends[bestMatchPosition];
 
   res.json(bestFriendMatch);
+  
 
   friendsArray.push(newFriend);
 });
