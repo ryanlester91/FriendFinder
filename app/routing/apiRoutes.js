@@ -2,8 +2,8 @@ var friendsArray = require('../data/friends.js');
 
 
 // Export API routes
-console.log("API Routing ready");
-module.exports = function(app) {
+//console.log("API Routing ready");
+function apiRoutes(app) {
 // Total list of friend entries
 app.get('/api/friends', function(req, res) {
   console.log(friendsArray);
@@ -48,7 +48,7 @@ app.post('/api/friends', function(req, res) {
   var bestFriendMatch = friends[bestMatchPosition];
 
   res.json(bestFriendMatch);
-  
+  //alert("Your best match is " + bestFriendMatch + "!");
 
   friendsArray.push(newFriend);
 });
@@ -58,4 +58,4 @@ app.post('/api/friends', function(req, res) {
 }
 
 //Doing the module.exports in a function is apparently enough to do this exporting task
-//module.exports = apiRoutes;
+module.exports = apiRoutes;
