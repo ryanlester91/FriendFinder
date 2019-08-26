@@ -27,11 +27,11 @@ app.post('/api/friends', function(req, res) {
 
   //Cross check our new friend entry with existing ones
   var scoreCompareArray = [];
-  for(var i=0; i < friends.length; i++) {
+  for(var i=0; i < friendsArray.length; i++) {
 
     var scoreDiffer = 0;
     for(var j=0; j < newFriend.scores.length; j++) {
-      scoreDiffer += Math.abs(newFriend.scores[j] - friends[i].scores[j]);
+      scoreDiffer += Math.abs(newFriend.scores[j] - friendsArray[i].scores[j]);
     }
 
     scoreCompareArray.push(scoreDiffer);
