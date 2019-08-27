@@ -1,7 +1,7 @@
 var friendsArray = [
     {
         name: 'Red Green',
-        photo: '../images/red-green-handy.jpg',
+        photo: 'https://ibb.co/GHfkjYP',
         scores: [
                 '5',
                 '4',
@@ -17,7 +17,7 @@ var friendsArray = [
     }, 
     {
         name: 'Dexter',
-        photo: '../images/dexters-lab.jpg',
+        photo: 'https://ibb.co/6ymfj0D',
         scores: [
                 '5',
                 '2',
@@ -33,7 +33,7 @@ var friendsArray = [
     },
     {
         name: 'Ketchup',
-        photo: '../images/ketchup.jpg',
+        photo: 'https://ibb.co/KwDfdGZ',
         scores: [
                 '5',
                 '1',
@@ -50,7 +50,7 @@ var friendsArray = [
     },
     {
         name: 'Neutral President',
-        photo: '../images/neutral-president.jpg',
+        photo: 'https://ibb.co/Mc3yYz2',
         scores: [
                 '3',
                 '3',
@@ -67,7 +67,7 @@ var friendsArray = [
     },
     {
             name: 'Emilia Clarke',
-            photo: '../images/emilia-clarke.jpg',
+            photo: 'https://ibb.co/7gB097T',
             scores: [
                     '4',
                     '3',
