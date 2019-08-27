@@ -45,7 +45,7 @@ app.post('/api/friends', function(req, res) {
     }
   }
 
-  var bestFriendMatch = friends[bestMatchPosition];
+  var bestFriendMatch = friendsArray[bestMatchPosition];
 
   res.json(bestFriendMatch);
   //alert("Your best match is " + bestFriendMatch + "!");
